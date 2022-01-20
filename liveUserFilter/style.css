@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color:blanchedalmond;
+}
+
+.container {
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px black;
+  overflow: hidden;
+  width: 500px;
+}
+
+.title {
+  margin: 0;
+}
+
+.subtitle {
+  display: inline-block;
+  margin: 5px 0 20px;
+  opacity: .8;
+}
+
+.header {
+  background-color: cadetblue;
+  color: white;
+  padding: 25px;
+}
+
+.header input {
+  background-color: darkcyan;
+  border-radius: 30px;
+  opacity: .3;
+  color: white;
+  font-size: 16px;
+  padding: 15px;
+  width: 100%;
+}
+
+.header input:focus {
+  outline: none;
+}
+
+.user-list {
+  background-color: darkgray;
+  list-style-type: none;
+  margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.user-list li {
+  display: flex;
+  padding: 20px;
+}
+
+.user-list img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 60px;
+  width: 60px;
+}
+
+.user-list .user-info {
+  margin-left: 10px;
+}
+
+.user-list .user-info h4 {
+  margin: 0 0 10px;
+}
+
+.user-list .user-info p {
+  font-size: 13px;
+}
+
+.user-list li {
+  border-bottom: 1px solid black;
+}
+
+.user-list li:last-of-type {
+  border-bottom: none;
+}
+
+.user-list li.hide {
+  display: none;
+}
+

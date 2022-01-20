@@ -1,0 +1,116 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Verdana-Bold;\f2\fnil\fcharset0 Verdana;
+\f3\fnil\fcharset0 Monaco;\f4\fnil\fcharset0 HelveticaNeue-Medium;\f5\fnil\fcharset0 HelveticaNeue;
+}
+{\colortbl;\red255\green255\blue255;\red217\green11\blue5;\red0\green0\blue0;\red244\green0\blue95;
+\red27\green40\blue71;\red246\green246\blue239;\red88\green209\blue235;\red157\green101\blue255;\red152\green224\blue36;
+\red224\green213\blue97;\red123\green221\blue55;\red252\green41\blue19;\red0\green0\blue0;\red251\green0\blue7;
+\red25\green28\blue31;\red255\green255\blue255;\red11\green97\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c88946\c14202\c0;\cssrgb\c0\c0\c0;\cssrgb\c97647\c14902\c44706;
+\cssrgb\c13725\c21176\c34902;\cssrgb\c97255\c97255\c94902;\cssrgb\c40000\c85098\c93725;\cssrgb\c68235\c50588\c100000;\cssrgb\c65098\c88627\c18039;
+\cssrgb\c90196\c85882\c45490;\cssrgb\c54133\c87606\c27652;\cssrgb\c100000\c25745\c7993;\cssrgb\c0\c1\c1;\cssrgb\c100000\c12195\c0;
+\cssrgb\c12941\c14510\c16078;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c48235\c100000;}
+\margl1440\margr1440\vieww15120\viewh14460\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+
+\f1\b \cf2 Message functionality \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Git Commands\
+\
+
+\f2\b0 git checkout -b feature/sms\
+/* do all the work , then */\
+git checkout master\
+git merge feature/sms\
+git add .\
+git commit -m \'91sms functionality\'92\
+git pull\
+git push origin master.  1
+\f1\b \
+\
+\
+Work Flow\
+\
+
+\f2\b0 -Create sms.js\
+-Copy/paste codes from twilio.\
+-node sms.js to check if messages are being sent out\
+-make that entire code block as a function *without* any parameters to start with\
+-Then from client.js (main jQuery file, refer TWEETER project for file structure)\
+call smsfunction and execute it to check if sms still gets sent\
+-Once all OK, play with form submit req.body to see how form is POSTING the request. \
+-Change your sms function now, make it a func that takes an object as parameter.\
+that object should contain all form inputs.\
+- make \
+const time , const messageTo. Change your message-> body as string literals \
+ ` to dynamically inject $\{time\}`. and also the phone number to be sent.\
+-Now, app can send messages to number coming from order request, and time can come from admin who will specity the time (we can also have a hard coded time to begin with and play and proceed) 
+\f1\b \
+\
+\
+Details\
+\
+
+\f2\b0 -go to twilio account, get a new twilio number for restaurant\
+-also add few numbers to be verified\
+-get sid and authid\
+\
+-from project dir, npm install \'97save twilio\
+(\'97save installs dependencies into package.JSON dependencies key)\
+- Also get ngrok \
+\
+\pard\pardeftab720\sl324\partightenfactor0
+
+\f3\fs21\fsmilli10800 \cf4 \cb5 \expnd0\expndtw0\kerning0
+onst\cf6  accountSid \cf7 =\cf6  process\cf7 .\cf6 env\cf7 .\cf8 TWILIO_ACCOUNT_SID\cf7 ;\cf6 \
+\cf4 const\cf6  authToken \cf7 =\cf6  process\cf7 .\cf6 env\cf7 .\cf8 TWILIO_AUTH_TOKEN\cf7 ;\cf6 \
+\cf4 const\cf6  client \cf7 =\cf6  \cf9 require\cf7 (\cf10 'twilio'\cf7 )(\cf6 accountSid\cf7 ,\cf6  authToken\cf7 );\cf6 \
+\
+client\cf7 .\cf6 messages\
+  \cf7 .\cf9 create\cf7 (\{\cf6 \
+     body\cf7 :\cf6  \cf10 'This is the ship that made the Kessel Run in fourteen parsecs?'\cf7 ,\cf6 \
+     from\cf7 :\cf6  \cf10 '+15017122661'\cf7 ,\cf6 \
+     to\cf7 :\cf6  \cf10 '+15558675310'\cf6 \
+   \cf7 \})\cf6 \
+  \cf7 .\cf9 then\cf7 (\cf8 message\cf6  \cf7 =>\cf6  console\cf7 .\cf9 log\cf7 (\cf6 message\cf7 .\cf6 sid\cf7 ))
+\f2\fs36 \cf11 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf11 \
+\cf12 Pending\cf11 : \cf13 module.export\
+\cf14 Pending:\cf11  \cf13 talk about amending database to send sms.create.then(messageid) into the history of messages\
+\
+\pard\pardeftab720\sl504\sa120\partightenfactor0
+
+\f4\fs42 \cf15 \cb16 \expnd0\expndtw0\kerning0
+Option 10: Food Pick-up Ordering\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\fs40\fsmilli20315 \cf15 A food ordering experience for a single restaurant. Hungry clients of this fictitious restaurant can visit its website, select one or more dishes and place an order for pick-up. They will receive a notification when their order is ready.\
+The restaurant and client both need to be notified since this app serves as an intermediary.\
+When an order is placed the restaurant receives the order via SMS. The restaurant can then specify how long it will take to fulfill it. Once they provide this information, the website updates for the client and also notifies them via SMS.\
+You can use a modern telecomm API service such as\'a0{\field{\*\fldinst{HYPERLINK "https://www.twilio.com/"}}{\fldrslt \cf17 Twilio}}\'a0to implement SMS communication from the website to the client and restaurant.\
+For inspiration check out how\'a0{\field{\*\fldinst{HYPERLINK "https://www.ritual.co/"}}{\fldrslt \cf17 Ritual}}\'a0works, but keep in mind that's implemented as a native app and serves more than one restaurant.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\fs36 \cf13 \cb1 \kerning1\expnd0\expndtw0 \
+\
+| !["menu"](https://github.com/ujjawalsidhpura/midterm_project/blob/master/docs/menu.png?raw=true) |\
+| :----------------------------------------------------------------------------------------------: |\
+|                                              _menu_                                              |\
+\
+| !["cart"](https://github.com/ujjawalsidhpura/midterm_project/blob/master/docs/cart.png?raw=true) |\
+| :----------------------------------------------------------------------------------------------: |\
+|                                              _cart_                                              |\
+\
+| !["sms"](https://github.com/ujjawalsidhpura/midterm_project/blob/master/docs/sms.png?raw=true) |\
+| :--------------------------------------------------------------------------------------------: |\
+|                                             _sms_                                              |\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 \
+}

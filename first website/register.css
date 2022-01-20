@@ -1,0 +1,334 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* My codes */
+
+/*default header */
+
+body {
+  font-family: "odibee sans";
+  margin: 0 50px;
+  background-color: skyblue;
+  box-sizing: border-box;
+}
+header {
+  background-color: skyblue;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  display: block;
+  width: 50%;
+  font-size: 60px;
+  text-align: center;
+}
+
+header h2 {
+  display: inline-block;
+  width: 50%;
+  font-size: 30px;
+  text-align: end;
+}
+
+.topnav {
+  background-color: skyblue;
+  display: block;
+  flex-direction: row;
+}
+.toplist {
+  display: flex;
+  margin: 0 10px 0 0;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.toplist a {
+  text-decoration: none;
+  color: white;
+}
+
+.topnav a:hover {
+  color: darkblue;
+}
+.toplist li {
+  display: inline;
+  font-size: 25px;
+  padding: 10px;
+}
+
+/* register section */
+section {
+  max-width: 100%;
+  height: auto;
+  background-color: lightgreen;
+  border-radius: 20px;
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+section h1 {
+  text-transform: uppercase;
+  font-size: 40px;
+  text-align: center;
+}
+section p {
+  font-size: 25px;
+  margin: 20px 40px;
+}
+
+/* MAIN form section */
+
+main {
+  max-width: 100%;
+  height: auto;
+  padding: 25px;
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.info,
+.form {
+  display: flex;
+  width: 50%;
+  height: auto;
+  line-height: 1.5;
+  flex-direction: column;
+  justify-items: flex-start;
+}
+
+#info {
+  padding-left: 25px;
+  padding-top: 25px;
+}
+.info h1 {
+  font-size: 45px;
+}
+.info span {
+  font-size: 20px;
+}
+.info h2 {
+  font-size: 30px;
+  margin-top: 10px;
+}
+.info p {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+#form {
+  padding-top: 25px;
+  display: flex;
+  padding-right: 100px;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+#form div {
+  font-size: 30px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 30px;
+  background-color: skyblue;
+  border-radius: 15px;
+}
+#registerbutton {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: lightgreen;
+}
+
+/* FOOTER */
+footer {
+  width: 100%;
+  height: auto;
+  background-color: skyblue;
+  border: 2px white solid;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottomlist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.bottomlist li {
+  align-content: center;
+  padding: 10px;
+}
+
+.bottomlist a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+footer div span {
+  width: 50%;
+  font-size: 20px;
+  display: flex;
+  padding: 10px;
+  justify-content: flex-start;
+}
+
+footer a:hover {
+  color: darkblue;
+}
+/* media */
+@media (max-width: 800px) {
+  main {
+    flex-direction: column;
+  }
+  #form {
+    justify-content: center;
+  }
+  #info {
+    justify-content: center;
+  }
+  footer {
+    flex-direction: column;
+  }
+
+  .bottomlist {
+    flex-direction: column;
+  }
+}
